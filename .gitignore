@@ -1,0 +1,8 @@
+.env
+envchat/
+enviso/
+__pycache__/
+__pycache__
+.git
+.vscode
+
