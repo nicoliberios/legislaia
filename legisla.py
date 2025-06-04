@@ -35,10 +35,10 @@ if 'response' not in st.session_state:
     st.session_state.response = None
 
 def conexion_a_mongo():
-    MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://liberionicolas:nnERjbqYVaA3U2rT@clusterlegislacion.ahirmsy.mongodb.net/")
+    MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://liberionicolas:nnERjbqYVaA3U2rT@clusterlegislacion.ahirmsy.mongodb.net/?retryWrites=true&w=majority&appName=ClusterLegislacion")
     client = MongoClient(MONGO_URI)
-    db = client["db-art-iso-leydpdd"]
-    collection = db["collection-leydpdd"]
+    db = client['db-art-iso-leydpdd']
+    collection = db['collection-leydpdd']
     return collection
 
 def guardar_chat_en_mongo(user, message, response, case_use=None, user_solution1=None, user_solution2=None):
