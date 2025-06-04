@@ -79,7 +79,7 @@ def main():
     mongo_uri = "mongodb+srv://liberionicolas:nnERjbqYVaA3U2rT@clusterlegislacion.ahirmsy.mongodb.net/?retryWrites=true&w=majority&appName=ClusterLegislacion&tls=true"
     db_name = "db-art-iso-leydpdd"
     collection_name = "collection-leydpdd"
-    client = MongoClient(mongo_uri, tls=True, tlsAllowInvalidCertificates=True, ssl_cert_reqs=ssl.CERT_NONE)
+    client = MongoClient(mongo_uri, tls=True, tlsAllowInvalidCertificates=True)
     db = client[db_name]
     collection = db[collection_name]
     data = list(collection.find())
