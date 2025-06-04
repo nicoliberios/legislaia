@@ -83,7 +83,7 @@ def main():
     st.sidebar.image('bott.jpg', width=250)
     st.markdown('<h1 style="color: #FFD700;">LEOPOLDO</h1>', unsafe_allow_html=True)
 
-    mongo_uri = "mongodb://localhost:27017/"
+    mongo_uri = "mongodb+srv://liberionicolas:nnERjbqYVaA3U2rT@clusterlegislacion.ahirmsy.mongodb.net/?retryWrites=true&w=majority&appName=ClusterLegislacion"
     db_name = "db-art-iso-leydpdd"
     collection_name = "collection-leydpdd"
     client = MongoClient(mongo_uri)
