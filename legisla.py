@@ -20,7 +20,7 @@ import base64
 import json
 import matplotlib.pyplot as plt
 import numpy as np
-
+import ssl
 load_dotenv()
 
 SALUDOS = "Hola en que puedo asistirte, ¡Saludos! ¿Cómo puedo ayudarte hoy?, ¡Bienvenido/a! ¿Cómo puedo asistirte?, ¡Qué gusto verte por aquí! ¿Cómo puedo ayudarte hoy? "
@@ -79,7 +79,7 @@ def main():
     mongo_uri = "mongodb+srv://liberionicolas:nnERjbqYVaA3U2rT@clusterlegislacion.ahirmsy.mongodb.net/?retryWrites=true&w=majority&appName=ClusterLegislacion&tls=true"
     db_name = "db-art-iso-leydpdd"
     collection_name = "collection-leydpdd"
-    client = MongoClient(mongo_uri)
+    client = MongoClient(mongo_uri, tls=True, tlsAllowInvalidCertificates=True, ssl_cert_reqs=ssl.CERT_NONE)
     db = client[db_name]
     collection = db[collection_name]
     data = list(collection.find())
